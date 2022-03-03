@@ -18,7 +18,7 @@ case ${option} in
        exit 1
        fi
        ##this echo returns 0 if all the checkings are passed
-       echo $PASSWORD | grep "[a-z]" | grep "[A-Z]" | grep "[0-9]"
+       CHECK=`echo $PASSWORD | grep "[a-z]" | grep "[A-Z]" | grep "[0-9]"`
        if [[ $? -ne 0 ]]; then
        echo -e "${red}Password must contain atleast 1 uppercase, lowercase and digits${clear}"
        exit 1
